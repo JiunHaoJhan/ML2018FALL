@@ -1,6 +1,6 @@
 #!/bin/bash
 
-train=1
+train=0
 
 if [ $train -eq 1 ]
 then
