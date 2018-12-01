@@ -238,6 +238,6 @@ if __name__ == '__main__':
     group.add_argument('--test', action='store_true', default=False, dest='test', help='input --test for testing')
     parser.add_argument('--train_path', default='data/train.csv', dest='train_path', help='path to train')
     parser.add_argument('--test_path', default='data/test.csv', dest='test_path', help='path to test')
-    parser.add_argument('--output_path', default='result/predict.csv', dest='output_path', help='path to output file')
+    parser.add_argument('--output_path', default='predict.csv', dest='output_path', help='path to output file')
     opt = parser.parse_args()
     main(opt)
