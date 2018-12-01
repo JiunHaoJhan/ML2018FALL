@@ -1,1 +1,2 @@
 
+cat save.pth.tar.* > result_mode
