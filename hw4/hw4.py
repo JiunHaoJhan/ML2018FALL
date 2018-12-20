@@ -32,23 +32,24 @@ def main(opt):
     else:
         train_x, train_y, test_x = dm.loadfile(opt.train_x_path, opt.train_y_path, opt.test_path)
     
-    #word2vec
-    if not os.path.exists('word2vec.model'):
-        dm.word_embedding(train_x, test_x, embedding_size)
-    else:
-        embedding_model = Word2Vec.load("word2vec.model")
-
-    #tokenizer
-    if not os.path.exists('tokenizer') or not os.path.exists('wordvector_matrix.npy'):
-        tokenizer, wordvector_matrix = dm.tokenize(vocab_size, train_x, test_x)
-    else:
-        tokenizer = pk.load(open('tokenizer', 'rb'))
-        wordvector_matrix = np.load('wordvector_matrix.npy')
-
-    #dm.find_padding_size(train_x, test_x)
+    
 
     #training model
     if opt.train:
+        #word2vec
+        if not os.path.exists('word2vec.model'):
+            dm.word_embedding(train_x, test_x, embedding_size)
+        else:
+            embedding_model = Word2Vec.load("word2vec.model")
+
+        #tokenizer
+        if not os.path.exists('tokenizer') or not os.path.exists('wordvector_matrix.npy'):
+            tokenizer, wordvector_matrix = dm.tokenize(vocab_size, train_x, test_x)
+        else:
+            tokenizer = pk.load(open('tokenizer', 'rb'))
+            wordvector_matrix = np.load('wordvector_matrix.npy')
+
+        #dm.find_padding_size(train_x, test_x)
         #padding
         train_x = dm.padding(train_x, padding_size)
 
