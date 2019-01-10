@@ -1,1 +1,27 @@
+Toolkit version:
+因為我們的code有使用fastai，他很容易安裝失敗
+所以我們我們pip freeze中所有有安裝的套件都列在requirement.txt中
+助教可以執行:
+pip install -r requirement.txt
+安裝所有我們有使用的package
 
+執行tesh:
+這部份只會將我們產生的model讀入後將predict輸出。
+執行指令如下：
+bash test.sh <train_x file> <test_x file> <train_y file> <sample file> <model file> <output file>
+train_x file 為train 圖片路徑
+test_x file 為test 圖片路徑
+train_y file 為train.csv 路徑
+sample file 為sample_submission.csv 路徑
+*model file 為我們所訓練模型的"名稱" ，E.g. 如果我們的model放在models的資料夾中，且檔名為Resnet34.h5，仍然只需輸入"Resnet34"
+output file 為 output file 路徑
+
+執行train:
+這部份會完整執行我們的程式碼，在訓練完之後一併進入test階段，將predict輸出
+執行指令如下：
+bash train.sh <train_x file> <test_x file> <train_y file> <sample file> <output file>
+train_x file 為train 圖片路徑
+test_x file 為test 圖片路徑
+train_y file 為train.csv 路徑
+sample file 為sample_submission.csv 路徑
+output file 為 output file 路徑
