@@ -8,5 +8,5 @@ cd ..
 wget 'https://www.dropbox.com/s/0hjw4wvh5otixt6/ResNet34_256_1_multi_0.489.h5'
 mv ResNet34_256_1_multi_0.489.h5 models/
 
-python3 src/final_test_old.py $train_x_path $train_y_path $test_path $sample_path $output_path
+python3 src/finaltest.py $train_x_path $train_y_path $test_path $sample_path $output_path
 cd src
