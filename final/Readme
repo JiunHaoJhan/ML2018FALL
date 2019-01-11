@@ -16,12 +16,11 @@ pip install -r requirement.txt
 【執行tesh】:
 這部份只會將我們產生的model讀入後將predict輸出。
 執行指令如下：
-bash test.sh <train_x file> <test_x file> <train_y file> <sample file> <model file> <output file>
+bash test.sh <train_x file> <test_x file> <train_y file> <sample file> <output file>
 train_x file 為train 圖片路徑
 test_x file 為test 圖片路徑
 train_y file 為train.csv 路徑
 sample file 為sample_submission.csv 路徑
-*model file 為我們所訓練模型的"名稱" ，E.g. 如果我們的model放在models的資料夾中，且檔名為Resnet34.h5，仍然只需輸入"Resnet34"
 output file 為 output file 路徑
 
 【執行train】:
