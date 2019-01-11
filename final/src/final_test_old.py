@@ -450,7 +450,7 @@ print('Fractions (true): ',(y > th).mean(axis=0))
 '''
 
 
-learner.load(os.path.join('ResNet_256_1_multi_0.489'))
+learner.load(os.path.join('ResNet34_0.485'))
 preds_t1,y_t1 = learner.TTA(n_aug=16,is_test=True)
 preds_t1 = np.stack(preds_t1, axis=-1)
 preds_t1 = sigmoid_np(preds_t1)
@@ -494,6 +494,7 @@ np.save('preds_t4.npy',preds_t4)
 # print(pred_t[0])
 # print(pred_t.shape)
 
+pred_t = preds_t1
 pred_t = pred_t.max(axis=-1) #max works better for F1 macro score
 
 
@@ -520,7 +521,7 @@ th_t = np.array([0.565,0.39,0.55,0.345,0.33,0.39,0.33,0.45,0.38,0.39,
                0.34,0.42,0.31,0.38,0.49,0.50,0.38,0.43,0.46,0.40,
                0.39,0.505,0.37,0.47,0.41,0.545,0.32,0.1])
 #print('Fractions: ',(pred_t > th_t).mean(axis=0))
-save_pred(pred_t,new_th_t)
+save_pred(pred_t,th_t)
 
 
 
