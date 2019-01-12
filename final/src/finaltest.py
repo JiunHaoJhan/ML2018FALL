@@ -502,7 +502,7 @@ preds_t = sigmoid_np(preds_t)
 pred_t = preds_t.max(axis=-1) #max works better for F1 macro score
 
 
-def save_pred(pred, th=0.5, fname='protein_classification_multi.csv'):
+def save_pred(pred, th=0.5, fname=OUTPUT):
     pred_list = []
     for line in pred:
         s = ' '.join(list([str(i) for i in np.nonzero(line>th)[0]]))
