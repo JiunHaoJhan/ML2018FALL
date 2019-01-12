@@ -1,11 +1,3 @@
-【執行方法】：
-因為我們在test中load model過程出了一些bug
-所以執行完test的結果上傳kaggle是低於原本的分數
-但若是執行完整個train的過程
-上傳kaggle會有一樣的分數
-所以希望助教以train的過程執行
-詳細指令如下
-
 【Toolkit version】:
 因為我們的code有使用fastai，他很容易安裝失敗
 所以我們我們pip freeze中所有有安裝的套件都列在requirement.txt中
